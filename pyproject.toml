@@ -1,0 +1,50 @@
+[project]
+name = "previsao-vendas"
+version = "0.1.0"
+description = "Pipeline de ciência de dados para previsão de vendas semanais do Walmart."
+readme = "README.md"
+authors = [
+    { name = "Robert Rossi Silva de Mesquita", email = "85962336+robertrossi@users.noreply.github.com" }
+]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "duckdb>=2.0.0",
+]
+
+[project.scripts]
+previsao-vendas = "previsao_vendas:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src", "testes"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # Erros de estilo do Pycodestyle
+    "F",   # Pyflakes: erros comuns
+    "I",   # Ordenação de imports
+    "B",   # Bugbear: possíveis bugs
+    "UP",  # Modernização de sintaxe Python
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+
+[tool.pytest.ini_options]
+testpaths = ["testes"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v"

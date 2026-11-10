@@ -1,0 +1,33 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ambientes virtuais
+.venv/
+venv/
+
+# Dados locais e bases geradas
+/dados/brutos/
+/dados/intermediarios/
+/dados/processados/
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Testes e qualidade de código
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operacional e IDE
+.DS_Store
+Thumbs.db
+.vscode/
