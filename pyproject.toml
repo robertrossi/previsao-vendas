@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.11,<3.12"
 dependencies = [
     "duckdb>=2.0.0",
+    "xgboost>=2.1.0",
 ]
 
 [project.scripts]
